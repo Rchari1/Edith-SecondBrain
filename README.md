@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="https://edithapp.ai">edithapp.ai</a> &middot;
-  <a href="https://github.com/Rchari1/Edith-SecondBrain/releases/latest">Download for macOS</a>
+  <a href="https://github.com/Rchari1/Edith-SecondBrain/releases/latest">Download for macOS</a> &middot;
+  <a href="https://marketplace.visualstudio.com/items?itemName=RaghavChari.edith-second-brain">VS Code extension</a>
 </p>
 
 Edith is a local, plain-Markdown knowledge base that Claude can read from and write to. Ask Claude to review your past sessions and it distils them into linked notes itself - no API key, no account, no inference of its own. 
@@ -40,6 +41,23 @@ Applications, and open it from there. Restart any Claude Code sessions that were
 
 On Windows? The Windows build lives at
 [Edith-Windows](https://github.com/Rchari1/Edith-Windows).
+
+### In VS Code
+
+The [Edith extension](https://marketplace.visualstudio.com/items?itemName=RaghavChari.edith-second-brain)
+registers Edith as an MCP server in the editor, so there is no `mcp.json` to write and no port to
+look up:
+
+```bash
+code --install-extension raghavchari.edith-second-brain
+```
+
+It finds the running app and hands the editor a live connection. If Edith is not running when the
+editor goes to start the server, the extension offers to open it. The source is in
+[`vscode-extension/`](vscode-extension).
+
+Edith is also listed in the official MCP registry as `io.github.Rchari1/edith-second-brain`, so
+clients that read the registry can find it without any of this.
 
 ### Or build it yourself
 
