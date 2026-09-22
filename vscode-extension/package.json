@@ -1,0 +1,65 @@
+{
+  "name": "edith-second-brain",
+  "displayName": "Edith Second Brain",
+  "description": "Connects VS Code to Edith, a local second brain that stores your sessions as linked Markdown notes.",
+  "version": "0.1.0",
+  "license": "FSL-1.1-MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.102.0",
+    "@vscode/vsce": "^3.2.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  },
+  "publisher": "PLACEHOLDER-PUBLISHER",
+  "icon": "icon.png",
+  "categories": [
+    "AI",
+    "Chat",
+    "Other"
+  ],
+  "keywords": [
+    "mcp",
+    "model context protocol",
+    "memory",
+    "notes",
+    "second brain",
+    "claude"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rchari1/Edith-SecondBrain.git"
+  },
+  "homepage": "https://edithapp.ai",
+  "bugs": {
+    "url": "https://github.com/Rchari1/Edith-SecondBrain/issues"
+  },
+  "activationEvents": [],
+  "contributes": {
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "edith",
+        "label": "Edith Second Brain"
+      }
+    ],
+    "commands": [
+      {
+        "command": "edith.status",
+        "title": "Edith: Show Connection Status"
+      },
+      {
+        "command": "edith.download",
+        "title": "Edith: Download the App"
+      }
+    ]
+  }
+}
